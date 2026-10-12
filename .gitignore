@@ -1,6 +1,9 @@
+node_modules/
+site/enquiry.generated.js
 .terraform/
 *.tfplan
 *.tfstate
 *.tfstate.*
+infra/enquiry.zip
 .DS_Store
 Thumbs.db
