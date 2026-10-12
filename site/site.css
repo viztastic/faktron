@@ -204,9 +204,14 @@ textarea.input { resize: vertical; min-height: 160px; }
 .speak .row > div { display: flex; flex-direction: column; gap: 14px; max-width: 620px; }
 .speak h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.01em; }
 
-@media (max-width: 720px) {
+/* Phones and portrait tablets: the headline spans the whole width, so the photo can't sit beside
+   it as it does at desktop. It becomes a band above the type instead, fading to solid graphite
+   exactly where the eyebrow begins, so no bright edge in the picture crosses a word. */
+@media (max-width: 820px) {
   .hide-sm { display: none; }
   .hero { min-height: 640px; }
-  .hero .wrap { padding-top: 120px; padding-bottom: 56px; }
+  .hero > img { object-position: 50% 38%; filter: saturate(.6) contrast(1.05) brightness(.7); }
+  .hero .shade { background: linear-gradient(180deg, rgba(18,19,20,.45) 0, rgba(18,19,20,.5) 150px, var(--ink) 290px); }
+  .hero .wrap { padding-top: 300px; padding-bottom: 56px; gap: 32px; }
   .card .photo { height: 200px; }
 }
