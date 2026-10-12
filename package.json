@@ -2,7 +2,7 @@
   "name": "faktron",
   "private": true,
   "version": "0.0.0",
-  "description": "Faktron's brand site: static pages on BTW's box, an enquiry function on Lambda, the domain and mail identities in OpenTofu.",
+  "description": "Faktron's brand site: static pages on S3 and CloudFront, an enquiry function on Lambda, the domain and mail identities in OpenTofu.",
   "type": "module",
   "engines": {
     "node": ">=22"

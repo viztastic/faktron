@@ -77,7 +77,7 @@ aws cloudfront create-invalidation --profile btw-admin --distribution-id "$(tofu
 ## What was there before
 
 Until the nameservers move, `www.faktron.com` still names the Figma Sites page, which Figma no
-longer serves, and the bare domain names Vodien's parking host. After they move, both are the new
+longer serves, and the bare domain names Figma's address. After they move, both are the new
 site. Vodien's own record list is worth a glance while in the panel: the zone carries what could be
 found by asking Vodien's nameserver name by name (the MX, `mail.`, the wildcard, the Figma CNAME),
 and a record nobody guessed, a Google verification TXT most likely, would need adding to

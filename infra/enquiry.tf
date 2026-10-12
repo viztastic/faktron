@@ -67,8 +67,9 @@ resource "aws_lambda_function" "enquiry" {
   memory_size      = 128
   timeout          = 10
 
-  # A ceiling on how much a flood of posts can cost or send; the form is one enquiry at a time.
-  reserved_concurrent_executions = 5
+  # No reserved concurrency: the account's whole Lambda limit is 10, and AWS refuses any reservation
+  # that would leave fewer than 10 unreserved. That limit is the ceiling on a flood of posts for
+  # now; if AWS ever raises it, put a reservation back here.
 
   environment {
     variables = {
