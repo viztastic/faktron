@@ -1,0 +1,6 @@
+.terraform/
+*.tfplan
+*.tfstate
+*.tfstate.*
+.DS_Store
+Thumbs.db
