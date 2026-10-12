@@ -67,9 +67,9 @@ resource "aws_lambda_function" "enquiry" {
   memory_size      = 128
   timeout          = 10
 
-  # No reserved concurrency: the account's whole Lambda limit is 10, and AWS refuses any reservation
-  # that would leave fewer than 10 unreserved. That limit is the ceiling on a flood of posts for
-  # now; if AWS ever raises it, put a reservation back here.
+  # No reserved concurrency: the account's Lambda ceiling is at the minimum AWS grants a new
+  # account, and reserving any of it is refused. The honeypot and the ten-second timeout are what
+  # bound a flood of posts; SES's sandbox caps the sending at 200 a day regardless.
 
   environment {
     variables = {

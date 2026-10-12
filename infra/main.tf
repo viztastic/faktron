@@ -115,7 +115,8 @@ resource "aws_route53_record" "www" {
   }
 }
 
-# The same two names over IPv6, which the distribution answers on.
+# The same two names over IPv6, which the distribution answers on. After the A records: Route 53
+# refuses an AAAA beside a CNAME, and www was a CNAME until its A record replaced it.
 resource "aws_route53_record" "ipv6" {
   for_each = toset([local.domain, "www.${local.domain}"])
 
@@ -128,4 +129,6 @@ resource "aws_route53_record" "ipv6" {
     zone_id                = aws_cloudfront_distribution.site.hosted_zone_id
     evaluate_target_health = false
   }
+
+  depends_on = [aws_route53_record.apex, aws_route53_record.www]
 }
